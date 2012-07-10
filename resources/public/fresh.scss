@@ -1,0 +1,567 @@
+/*
+	Frameless			<http://framelessgrid.com/>
+	by Joni Korpi 		<http://jonikorpi.com/>
+	licensed under CC0	<http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+
+
+//
+// Configuration
+//
+
+$font-size: 14px; 		// Your base font-size in pixels
+$content-color: #606060;
+$headline-color: #951c23;
+$sidebar-color: #ecd7ac;
+$sidebar-background-color: #686765;
+
+$em: $font-size / 1em;	// Shorthand for outputting ems
+
+$column: 80px;	// The column-width of your grid in pixels
+$gutter: 0px;	// The gutter-width of your grid in pixels
+
+
+//
+// Column-widths in variables, in ems
+//
+
+ $cols1: ( 1 * ($column + $gutter) - $gutter) / $em;
+ $cols2: ( 2 * ($column + $gutter) - $gutter) / $em;
+ $cols3: ( 3 * ($column + $gutter) - $gutter) / $em;
+ $cols4: ( 4 * ($column + $gutter) - $gutter) / $em;
+ $cols5: ( 5 * ($column + $gutter) - $gutter) / $em;
+ $cols6: ( 6 * ($column + $gutter) - $gutter) / $em;
+ $cols7: ( 7 * ($column + $gutter) - $gutter) / $em;
+ $cols8: ( 8 * ($column + $gutter) - $gutter) / $em;
+ $cols9: ( 9 * ($column + $gutter) - $gutter) / $em;
+$cols10: (10 * ($column + $gutter) - $gutter) / $em;
+$cols11: (11 * ($column + $gutter) - $gutter) / $em;
+$cols12: (12 * ($column + $gutter) - $gutter) / $em;
+$cols13: (13 * ($column + $gutter) - $gutter) / $em;
+$cols14: (14 * ($column + $gutter) - $gutter) / $em;
+$cols15: (15 * ($column + $gutter) - $gutter) / $em;
+$cols16: (16 * ($column + $gutter) - $gutter) / $em;
+
+
+//
+// Column-widths in a function, in ems
+//
+
+@mixin width ($cols:1) {
+	/* width: ($cols * ($column + $gutter) - $gutter) / $em; */
+	width: ($cols * ($column + $gutter) - $gutter);
+}
+
+
+/*
+	Margin, padding, and border resets
+	except for form elements
+*/
+
+body, div,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, th, td,
+article, aside, figure, footer, header, hgroup, menu, nav, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+
+/*
+	Consistency fixes
+	adopted from http://necolas.github.com/normalize.css/
+*/
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, nav, section, audio, canvas, video {
+	display: block;
+}
+
+html {
+	height: 100%; 
+	-webkit-text-size-adjust: 100%; 
+	-ms-text-size-adjust: 100%;
+}
+
+	body {min-height: 100%; font-size: 100%;}
+
+sub, sup {
+	font-size: 75%; 
+	line-height: 0; 
+	position: relative; 
+	vertical-align: baseline;
+}
+
+	sup {top: -0.5em;}
+	sub {bottom: -0.25em;}
+
+pre {
+	white-space: pre; 
+	white-space: pre-wrap; 
+	word-wrap: break-word;
+}
+
+b, strong {font-weight: bold;}
+abbr[title] {border-bottom: 1px dotted;}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a img, img {
+	-ms-interpolation-mode: bicubic;
+	border: 0;
+}
+
+input, textarea, button, select {
+	margin: 0;
+	font-size: 100%;
+	line-height: normal;
+	vertical-align: baseline;
+}
+
+	button,
+	html input[type="button"], 
+	input[type="reset"], 
+	input[type="submit"] {
+	    cursor: pointer;
+	    -webkit-appearance: button;
+	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+			 -o-box-sizing: border-box;
+			-ms-box-sizing: border-box;
+				box-sizing: border-box;
+	}
+
+	textarea {overflow: auto;}
+
+
+/*
+	These are easy to forget
+*/
+
+::selection {
+	background: red;
+	color: white;
+}
+::-moz-selection {
+	background: red;
+	color: white;
+}
+
+img::selection {
+	background: transparent;
+}
+img::-moz-selection {
+	background: transparent;
+}
+
+body {
+	-webkit-tap-highlight-color: rgba(255,0,0, 0.62);
+}
+
+
+/*
+	Style overrides for IE6-8
+	http://jonikorpi.com/leaving-old-IE-behind/
+*/
+
+.ie {
+
+}
+
+
+/*
+	An easy way to zoom your entire layout in or out (as long as it's set in ems).
+	Just change the media queries to activate them.
+	Assuming your base font-size is 16:
+	- the first one zooms out by a factor of (16-2)/16 = 0.875
+	- the second one zooms in by a factor of (16+2)/16 = 1.125  
+*/
+
+@media screen and (max-width: 1px) {
+	body {
+		font-size: ($font-size - 2) / $em;
+	}
+}
+
+@media screen and (max-width: 1px) {
+	body {
+		font-size: ($font-size + 2) / $em;
+	}
+}
+
+
+// Start custom styles
+div.clear {
+	clear: both !important;
+	height: 0px !important;
+	float: none !important;
+}
+
+.hidden {
+	display: none;
+}
+
+body > div, body > header {
+	width: 100%;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+div {
+	/* display: inline-block; */
+}
+
+@mixin horizontal-nav {
+	ul {
+		display: inline-block;
+		li {
+			list-style: none;
+			display: inline-block;
+		}
+	}
+}
+
+
+@font-face {
+    font-family: 'OstrichSansBlack';
+    src: url('/assets/fonts/ostrich_black-webfont.eot');
+    src: url('/assets/fonts/ostrich_black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/ostrich_black-webfont.woff') format('woff'),
+         url('/assets/fonts/ostrich_black-webfont.ttf') format('truetype'),
+         url('/assets/fonts/ostrich_black-webfont.svg#OstrichSansBlack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'OstrichSansBold';
+    src: url('/assets/fonts/ostrich_bold-webfont.eot');
+    src: url('/assets/fonts/ostrich_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/ostrich_bold-webfont.woff') format('woff'),
+         url('/assets/fonts/ostrich_bold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/ostrich_bold-webfont.svg#OstrichSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'OstrichSansDashedMedium';
+    src: url('/assets/fonts/ostrich_dashed-webfont.eot');
+    src: url('/assets/fonts/ostrich_dashed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/ostrich_dashed-webfont.woff') format('woff'),
+         url('/assets/fonts/ostrich_dashed-webfont.ttf') format('truetype'),
+         url('/assets/fonts/ostrich_dashed-webfont.svg#OstrichSansDashedMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'OstrichSansLight';
+    src: url('/assets/fonts/ostrich_light-webfont.eot');
+    src: url('/assets/fonts/ostrich_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/ostrich_light-webfont.woff') format('woff'),
+         url('/assets/fonts/ostrich_light-webfont.ttf') format('truetype'),
+         url('/assets/fonts/ostrich_light-webfont.svg#OstrichSansLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'OstrichSansMedium';
+    src: url('/assets/fonts/ostrich_regular-webfont.eot');
+    src: url('/assets/fonts/ostrich_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/ostrich_regular-webfont.woff') format('woff'),
+         url('/assets/fonts/ostrich_regular-webfont.ttf') format('truetype'),
+         url('/assets/fonts/ostrich_regular-webfont.svg#OstrichSansMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'OstrichSansRoundedMedium';
+    src: url('/assets/fonts/ostrich_rounded-webfont.eot');
+    src: url('/assets/fonts/ostrich_rounded-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/ostrich_rounded-webfont.woff') format('woff'),
+         url('/assets/fonts/ostrich_rounded-webfont.ttf') format('truetype'),
+         url('/assets/fonts/ostrich_rounded-webfont.svg#OstrichSansRoundedMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+body {
+	background-image: url( "assets/background-slate.png" );
+	text-align: center;
+	font-size: 0;
+	color: white;
+	font-family: "Helvetica", Arial, sans-serif;
+}
+
+
+#header {
+	display: inline-block;
+	@include width( 12 );
+
+	#tabs {
+		float: left;
+		@include horizontal-nav;
+
+		ul {
+			height: 45px;
+			display: table;
+
+			li {
+				text-align: center;
+				vertical-align: bottom;
+				display: table-cell;
+				padding-left: 15px;
+				padding-bottom: 6px;
+
+				a {
+					text-shadow: 0px 1px 0px black;
+					font-size: 20px;
+					font-family: 'OstrichSansBlack', sans-serif;
+				}
+
+				a.active {
+					text-shadow: 0px 1px 0px white;
+					color: #4f4d4d;
+				}
+			}
+
+			li:first-child {
+				padding-left: 0;
+			}
+			
+			li#twb-tab {
+				width: 245px;
+				height: 100%;
+			}
+
+			li#twb-tab.active {
+				background-image: url( "assets/twb-tab-active.png" );
+			}
+
+		}
+	}
+
+	#contact {
+		float: right;
+		text-align: right;
+		padding-top: 21px;
+
+		a {
+			color: #c8c6b4;
+			text-shadow: 0px 1px 0px black;
+			font-size: 17px;
+			font-family: 'OstrichSansBlack', sans-serif;
+		}
+	}
+}
+
+#primary-nav {
+	background-image: url( "assets/background-sand.png" );
+	@include horizontal-nav;
+	padding: 12px 0 12px;
+
+	ul {
+		@include width(12);
+
+		li {
+			@include width(2);
+		}
+
+		li#logo-cog {
+			@include width(4);
+		}
+
+	}
+}
+
+#banner {
+	background-image: url( "assets/background-granite.png" );
+}
+
+
+#banner.beers {
+	background-image: url( "assets/background-granite-beers.png" );
+}
+
+#beers {
+	padding-bottom: 24px;
+	background-image: url( "assets/beers.png" );
+	background-repeat: no-repeat;
+	background-position: top center;
+	width: 100%;
+}
+
+#lower {
+	padding-bottom: 68px;
+	background-image: url( "assets/background-shale.png" );
+	div {
+		display: inline-block;
+	}
+
+	h2 {
+		font-weight: normal;
+		text-shadow: 0px 1px 1px white;
+		font-size: 25px;
+		font-family: 'OstrichSansBlack', sans-serif;
+		color: #918f8b;
+		padding-bottom: 24px;
+	}
+
+	img.h2 {
+		padding-bottom: 24px;
+	}
+
+	
+	img.v-div {
+		padding-bottom: 32px;
+	}
+
+	#lower-nav {
+		text-align: center;
+
+		.left, .middle, .right {
+			@include width(4);
+		}
+	}
+}
+
+#footer {
+
+	padding: 30px 0 30px;
+
+	img {
+		padding-bottom: 15px;
+	}
+
+	div {
+		@include width( 4 );
+		display: inline-block;
+		font-size: $font-size;
+	}
+
+	li {
+		list-style: none;
+		padding: 6px;
+	}
+}
+
+#content {
+	background: none;
+	background-color: white;
+	padding: 65px 0 85px 0;
+
+	div {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	p {
+		padding-bottom: 1.5em;
+	}
+
+	#left {
+		@include width( 8 );
+
+		font-size: $font-size;
+		color: $content-color;
+		text-align: left;
+
+		h1 {
+			color: $headline-color;
+			font-family: "OstrichSansLight";
+			font-size: 48px;
+			padding-bottom: 23px;
+		}
+
+		h2 {
+			color: #605f5e;
+			font-family: "OstrichSansBlack";
+			font-size: 28px;
+			padding-bottom: 13px;
+		}
+	}
+
+	/* #divider { */
+	/* 	@include width( 1 ); */
+	/* 	height: 300px; */
+	/* 	background-image: url( 'assets/divider-background.png' ); */
+	/* 	background-position: center; */
+	/* 	background-repeat: repeat-y; */
+	/* } */
+
+	#right {
+		@include width( 4 );
+
+		#recipe-header {
+			background-color: $sidebar-background-color;
+		}
+
+		#recipe {
+			padding: 25px 23px 32px 23px;
+			text-align: left;
+			background-color: #918f8b;
+			background-image: url( 'assets/sidebar-bottom.png' );
+			background-repeat: no-repeat;
+			background-position: bottom;
+			font-size: 12px;
+			width: 224px;
+			border-top: 1px solid gray;
+			font-weight: bold;
+			text-shadow: 0px 1px 0px black;
+			line-height: 1.8em;
+		}
+
+		h2 {
+			font-family: "Helvetica", Arial, sans-serif;
+			color: white;
+			font-size: 18px;
+			padding-bottom: 5px;
+		}
+
+		h3 {
+			font-family: "OstrichSansBlack";
+			padding-top: 20px;
+			color: #ecdcaa;
+			font-size: 16px;
+		}
+	}
+}
