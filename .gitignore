@@ -1,0 +1,8 @@
+target/
+.project_index
+README.md
+TAGS
+doc/
+test/
+resources/public/.sass-cache/
+

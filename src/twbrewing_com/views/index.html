@@ -31,13 +31,15 @@
 		<div id="tabs">
 			<ul>
 				<li id="twb-tab" class="active">
-					<a href="#">
-						<img src="assets/twb-tab-text-active.png" alt="Tin Whiskers Brewing Co."/>
+					<a href="/">
+						<!-- <img src="assets/twb-tab-text-active.png" alt="Tin Whiskers Brewing Co."/> -->
+						Tin Whiskers Brewing Co.
 					</a>
 				</li>
-				<li>
+				<li id="blw-tab">
 					<a href="#">
-						<img src="assets/blw-tab-text.png" alt="Tin Whiskers Brewing Co."/>
+						<!-- <img src="assets/blw-tab-text.png" alt="Tin Whiskers Brewing Co."/> -->
+						Brew Logic Wiki
 					</a>
 				</li>
 			</ul>
@@ -45,7 +47,8 @@
 
 		<div id="contact">
 			<a href="#">
-				<img src="assets/contact.png" alt="Contact Us" />
+				<!-- <img src="assets/contact.png" alt="Contact Us" /> -->
+				Contact Tin Whiskers Brewing Co.
 			</a>
 		</div>
 
@@ -53,24 +56,28 @@
 	<nav id="primary-nav">
 		<ul>
 			<li>
-				<a href="beer.html">
-					<img src="assets/beer-specifications.png" alt="Beer Specifications" />
+				<a href="/beer">
+					<span class="big">Beer</span>
+					<span class="little">Specifications</span>
 				</a>
 			</li><li>
-				<a href="#">
-					<img src="assets/news-and-updates.png" alt="News and Updates" />
+				<a href="/news">
+					<span class="big">News</span>
+					<span class="little">&amp; Updates</span>
 				</a>
 			</li><li id="logo-cog">
 				<a href="/">
 					<img src="assets/logo-cog.png" alt="Tin Whiskers Brewing" />
 				</a>
 			</li><li>
-				<a href="#">
-					<img src="assets/who-are-we.png" alt="Who are we?" />
+				<a href="/who">
+					<span class="big">Who</span>
+					<span class="little">Are We?</span>
 				</a>
 			</li><li>
-				<a href="#">
-					<img src="assets/where-to-find-us.png" alt="Where to Find Us" />
+				<a href="/where">
+					<span class="big">Where</span>
+					<span class="little">To Find Us</span>
 				</a>
 			</li>
 		</ul>
@@ -86,22 +93,51 @@
 	<div id="lower">
 
 		<div id="beers">
-			<img src="assets/beers.png" alt="beers" />
+			<!-- <img src="assets/beers.png" alt="beers" /> -->
+			<img src="assets/blank.png" height="200px" width="960px" alt="beers" />
 		</div>
 
 		<div id="lower-nav">
 
 			<div class="left">
-				<img class="h2" src="assets/connect-on-twitter.png" alt="Connect on Twitter"/>
+				<h2>Connect on Twitter</h2>
 				<div id="connect-on-twitter">
-					<img src="assets/twitter-widget.png" alt="Twitter" />
+					<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+					<script>
+					new TWTR.Widget({
+					  version: 2,
+					  type: 'profile',
+					  rpp: 3,
+					  interval: 30000,
+					  width: 270,
+					  height: 241,
+					  theme: {
+						shell: {
+						  background: '#686766',
+						  color: '#ffffff'
+						},
+						tweets: {
+						  background: '#b9b6af',
+						  color: '#333131',
+						  links: '#a01821'
+						}
+					  },
+					  features: {
+						scrollbar: true,
+						loop: false,
+						live: false,
+						behavior: 'all'
+					  }
+					}).render().setUser('mnbeer').start();
+					</script>
+					<!-- <img src="assets/twitter-widget.png" alt="Twitter" /> -->
 				</div>
 			</div>
 
 			<img class="v-div" src="assets/v-divider.png" alt="" />
 
 			<div class="middle">
-				<img class="h2" src="assets/connect-in-real-life.png" alt="Connect in Real Life"/>
+				<h2>Connect in Real Life</h2>
 				<div id="connect-for-real">
 					<img src="assets/at-our-brewery.png" alt="At Our Brewery" />
 				</div>
@@ -110,8 +146,7 @@
 			<img class="v-div" src="assets/v-divider.png" alt="" />
 
 			<div class="right">
-				<!-- <h2>Other Ways to Connect</h2> -->
-				<img class="h2" src="assets/other-ways-to-connect.png" alt="Other Ways to Connect"/>
+				<h2>Other Ways to Connect</h2>
 				<div id="other-ways-to-connect">
 					<a href="#"><img src="assets/connect-brew-logic-wiki.png" alt="Brew Logic Wiki" /></a>
 					<a href="#"><img src="assets/connect-facebook.png" alt="Facebook" /></a>

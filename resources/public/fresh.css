@@ -215,19 +215,29 @@ body {
         padding-left: 15px;
         padding-bottom: 6px; }
         #header #tabs ul li a {
-          text-shadow: 0px 1px 0px black;
           font-size: 20px;
-          font-family: 'OstrichSansBlack', sans-serif; }
-        #header #tabs ul li a.active {
-          text-shadow: 0px 1px 0px white;
-          color: #4f4d4d; }
+          font-family: 'OstrichSansBlack', sans-serif;
+          text-shadow: 0px 1px 0px black;
+          color: white;
+          padding-left: 24px;
+          padding-top: 3px;
+          background-repeat: no-repeat;
+          background-position: left; }
       #header #tabs ul li:first-child {
         padding-left: 0; }
       #header #tabs ul li#twb-tab {
         width: 245px;
         height: 100%; }
+        #header #tabs ul li#twb-tab a {
+          background-image: url("assets/robot-tiny-active.png"); }
       #header #tabs ul li#twb-tab.active {
         background-image: url("assets/twb-tab-active.png"); }
+        #header #tabs ul li#twb-tab.active a {
+          text-shadow: 0px 1px 0px white;
+          color: #4f4d4d;
+          background-image: url("assets/robot-tiny.png"); }
+      #header #tabs ul li#blw-tab a {
+        background-image: url("assets/pint-tiny.png"); }
   #header #contact {
     float: right;
     text-align: right;
@@ -235,8 +245,14 @@ body {
     #header #contact a {
       color: #c8c6b4;
       text-shadow: 0px 1px 0px black;
-      font-size: 17px;
-      font-family: 'OstrichSansBlack', sans-serif; }
+      font-weight: bold;
+      font-size: 18px;
+      font-family: 'OstrichSansBlack', sans-serif;
+      padding-left: 24px;
+      padding-top: 3px;
+      background-image: url("assets/envelope-tiny.png");
+      background-repeat: no-repeat;
+      background-position: left; }
 
 #primary-nav {
   background-image: url("assets/background-sand.png");
@@ -250,8 +266,29 @@ body {
     /* width: ($cols * ($column + $gutter) - $gutter) / $em; */
     width: 960px; }
     #primary-nav ul li {
+      vertical-align: middle;
       /* width: ($cols * ($column + $gutter) - $gutter) / $em; */
       width: 160px; }
+      #primary-nav ul li .big {
+        font-weight: normal;
+        text-shadow: 0px 1px 1px white;
+        font-size: 48px;
+        font-family: 'OstrichSansBold', sans-serif;
+        letter-spacing: 2px;
+        color: #8f1720;
+        padding-bottom: 13px;
+        display: block; }
+      #primary-nav ul li .little {
+        font-weight: normal;
+        text-shadow: 0px 1px 1px white;
+        font-size: 20px;
+        font-family: 'OstrichSansBlack', sans-serif;
+        color: #74685c;
+        background-image: url("assets/nav-underline.png");
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        padding-bottom: 22px;
+        display: block; }
     #primary-nav ul li#logo-cog {
       /* width: ($cols * ($column + $gutter) - $gutter) / $em; */
       width: 320px; }

@@ -353,14 +353,14 @@ body {
 				padding-bottom: 6px;
 
 				a {
-					text-shadow: 0px 1px 0px black;
 					font-size: 20px;
 					font-family: 'OstrichSansBlack', sans-serif;
-				}
-
-				a.active {
-					text-shadow: 0px 1px 0px white;
-					color: #4f4d4d;
+					text-shadow: 0px 1px 0px black;
+					color: white;
+					padding-left: 24px;
+					padding-top: 3px;
+					background-repeat: no-repeat;
+					background-position: left;
 				}
 			}
 
@@ -371,10 +371,26 @@ body {
 			li#twb-tab {
 				width: 245px;
 				height: 100%;
+
+				a {
+					background-image: url( 'assets/robot-tiny-active.png' );
+				}
 			}
 
 			li#twb-tab.active {
 				background-image: url( "assets/twb-tab-active.png" );
+
+				a {
+					text-shadow: 0px 1px 0px white;
+					color: #4f4d4d;
+					background-image: url( 'assets/robot-tiny.png' );
+				}
+			}
+
+			li#blw-tab {
+				a {
+					background-image: url( 'assets/pint-tiny.png' );
+				}
 			}
 
 		}
@@ -388,8 +404,14 @@ body {
 		a {
 			color: #c8c6b4;
 			text-shadow: 0px 1px 0px black;
-			font-size: 17px;
+			font-weight: bold;
+			font-size: 18px;
 			font-family: 'OstrichSansBlack', sans-serif;
+			padding-left: 24px;
+			padding-top: 3px;
+			background-image: url( 'assets/envelope-tiny.png' );
+			background-repeat: no-repeat;
+			background-position: left;
 		}
 	}
 }
@@ -403,6 +425,33 @@ body {
 		@include width(12);
 
 		li {
+
+			vertical-align: middle;
+			
+			.big {
+				font-weight: normal;
+				text-shadow: 0px 1px 1px white;
+				font-size: 48px;
+				font-family: 'OstrichSansBold', sans-serif;
+				letter-spacing: 2px;
+				color: #8f1720;
+				padding-bottom: 13px;
+				display: block;
+			}
+
+			.little {
+				font-weight: normal;
+				text-shadow: 0px 1px 1px white;
+				font-size: 20px;
+				font-family: 'OstrichSansBlack', sans-serif;
+				color: #74685c;
+				background-image: url( 'assets/nav-underline.png' );
+				background-position: bottom center;
+				background-repeat: no-repeat;
+				padding-bottom: 22px;
+				display: block;
+			}
+			
 			@include width(2);
 		}
 
