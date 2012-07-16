@@ -7,7 +7,7 @@
             [hiccup.core :as h]
             [compojure.handler :as handler]))
 
-(def *content-template* "twbrewing_com/views/content.html")
+(def content-template "twbrewing_com/views/content.html")
 
 (defn render [ss]
   (apply str ss))
@@ -28,7 +28,7 @@
 
 
 (defn select [selector]
-  (t/select (t/html-resource *content-template*) selector))
+  (t/select (t/html-resource content-template) selector))
 
 
 (defn sub-or-keep [transform stuff]
