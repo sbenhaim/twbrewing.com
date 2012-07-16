@@ -7,6 +7,8 @@
             [hiccup.core :as h]
             [compojure.handler :as handler]))
 
+(def *content-template* "twbrewing_com/views/content.html")
+
 (defn render [ss]
   (apply str ss))
 
@@ -25,6 +27,14 @@
       (sub t/substitute nil)))
 
 
+(defn select [selector]
+  (t/select (t/html-resource *content-template*) selector))
+
+
+(defn sub-or-keep [transform stuff]
+  (if stuff (sub-maybe transform stuff) identity))
+
+
 (t/deftemplate layout "twbrewing_com/views/layout.html" [d]
   [:#banner] (sub t/substitute (d :banner))
   [:#banner] (t/add-class (d :class))
@@ -32,15 +42,18 @@
   [:#lower] (sub-maybe t/content (d :lower))
   [(d :selected-beer)] (t/add-class "selected")
   [(d :selected-nav)] (t/add-class "selected")
+  [:#banner :div.h1] (t/html-content (d :banner-text))
+  [:#right] (sub-or-keep t/content (d :right))
+  [:.twitter-widget] (t/substitute (select [:#connect-twitter]))
   )
 
 (defn banner [page]
-  ((t/snippet "twbrewing_com/views/content.html" [(keyword (str "#banner." page))] [])))
+  (select [(keyword (str "#banner." page))]))
+
 
 (defn content [page]
-  ((t/snippet "twbrewing_com/views/content.html" [(keyword (str "#content." page)) :> :*] [])))
+  (select [(keyword (str "#content." page)) :> :*]))
 
-;; (t/defsnippet banner "twbrewing_com/views/content.html" [:#banner :> :*] [])
 (t/defsnippet lower "twbrewing_com/views/content.html" [:#lower :> :*] [])
 
 (t/defsnippet beer-banner "twbrewing_com/views/content.html" [:#banner-beers :> :*] [])
@@ -64,8 +77,10 @@
 
   ;; (GET "/beers/:beer" [beer] (render-snippet (beer-content beer)))
 
-  (GET "/news" [] (render (layout {:banner (banner "news")
+  (GET "/news" [] (render (layout {:banner (banner "general")
+                                   :banner-text "The Brew's News"
                                    :content (content "news")
+                                   :right (select [#{:#connect-twitter :#connect-other}])
                                    :selected-nav :#nav-news})))
 
   (GET "/who" [] (render (layout {:banner (banner "who")
@@ -75,6 +90,13 @@
   (GET "/where" [] (render (layout {:banner (banner "where")
                                   :content (content "where")
                                   :selected-nav :#nav-where})))
+
+  (GET "/blw" [] (resp/redirect "/coming-soon"))
+
+  (GET "/coming-soon" [] (render (layout {:banner (banner "general")
+                                          :banner-text "Coming Soon"
+                                          :content (content "coming-soon")
+                                          :selected-nav :#blw-tab})))
 
   ;; (GET "/beer-content" [] (render-snippet (content)))
 
