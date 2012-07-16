@@ -6,7 +6,8 @@
   :dependencies [[compojure "1.1.0"]
                  [org.clojure/clojure "1.4.0"]
                  [enlive "1.0.1"]
-                 [hiccup "1.0.0"]]
-  :dev-dependencies [[ring-serve "0.1.1"]]
+                 [hiccup "1.0.0"]
+                 [ring "1.1.1"]]
+  ;; :profiles {:dev {:dependencies [[ring-serve "0.1.1"]]}}
   :plugins [[lein-ring "0.7.1"]]
   :ring {:handler twbrewing_com.core/app})

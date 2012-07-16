@@ -47,9 +47,13 @@ $cols16: (16 * ($column + $gutter) - $gutter) / $em;
 // Column-widths in a function, in ems
 //
 
+@function col-width ( $cols ) {
+	@return ($cols * ($column + $gutter) - $gutter);
+}
+
 @mixin width ($cols:1) {
 	/* width: ($cols * ($column + $gutter) - $gutter) / $em; */
-	width: ($cols * ($column + $gutter) - $gutter);
+	width: col-width( $cols );
 }
 
 
@@ -464,20 +468,38 @@ body {
 
 #banner {
 	background-image: url( "assets/background-granite.png" );
+	text-align: center;
+
+	#cell {
+		@include width( 14 );
+		display: inline-block;
+		height: 433px;
+		background-image: url( "assets/banner-short-circuit-stout-temp.jpg" );
+		/* background-image: url( "assets/banner-short-circuit-stout.jpg" ); */
+		background-repeat: no-repeat;
+		background-position: right;
+		text-align: left;
+
+		#text {
+			@include width( 8 );
+
+			height: 433px;
+			padding-top: 100px;
+			padding-left: col-width( 1 );
+
+			h1 {
+				font-family: 'OstrichSansMedium', sans-serif;
+				font-size: 86px;
+				font-weight: normal;
+				color: white;
+				letter-spacing: -1px;
+			}
+		}
+	}
 }
 
 
-#banner.beers {
-	background-image: url( "assets/background-granite-beers.png" );
-}
 
-#beers {
-	padding-bottom: 24px;
-	background-image: url( "assets/beers.png" );
-	background-repeat: no-repeat;
-	background-position: top center;
-	width: 100%;
-}
 
 #lower {
 	padding-bottom: 68px;
@@ -614,3 +636,99 @@ body {
 		}
 	}
 }
+
+// Beer Hover banner
+
+#banner.beers {
+	background-image: url( "assets/background-granite-beers.png" );
+
+	#beer-background {
+		height: 321px;
+		background-image: url( "assets/background-beers.jpg" );
+		background-repeat: no-repeat;
+		background-position: center;
+		display: inline-block;
+		width: 100%;
+	}
+}
+
+
+#banner.beers ul	{
+	height: 214px;
+	width: 960px;
+	background: transparent url("assets/bg_beers_internal.jpg") top left no-repeat;
+	margin: 107px auto 0 auto;
+	padding: 0;
+	position: relative;
+
+	li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		position: absolute;
+
+		a {
+			height: 125px;
+			width: 125px;
+			display: block;
+			text-indent: -9999px;
+		}
+
+		&#short-circuit {left: 0px; top: 70px; }
+		&#flip-switch	{left: 209px; top: 20px; }
+		&#wheatstone	{left: 418px; top: 70px; }
+		&#schottky {left: 627px; top: 20px; }
+		&#ampere {left: 835px; top: 70px; }
+
+		&#short-circuit a:hover, &#short-circuit.selected {background: transparent url("assets/bg_beers_internal.jpg") 0 -285px no-repeat; }
+		&#flip-switch a:hover, &#flip-switch.selected {background: transparent url("assets/bg_beers_internal.jpg") -209px -235px no-repeat; }
+		&#wheatstone a:hover, &#wheatstone.selected {background: transparent url("assets/bg_beers_internal.jpg") -418px -285px no-repeat; }
+		&#schottky a:hover, &#schottky.selected {background: transparent url("assets/bg_beers_internal.jpg") -627px -235px no-repeat; }
+		&#ampere a:hover, &#ampere.selected {background: transparent url("assets/bg_beers_internal.jpg") -835px -285px no-repeat; }
+	}
+}
+
+#beers {
+	padding-bottom: 24px;
+	background-image: url( "assets/beers.png" );
+	background-repeat: no-repeat;
+	background-position: top center;
+	width: 100%;
+
+	ul	{
+		height: 214px;
+		width: 960px;
+		background: transparent url("/assets/bg_beers_internal.jpg") top left no-repeat;
+		margin: 0 auto 0 auto;
+		padding: 0;
+		position: relative;
+
+		li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			position: absolute;
+
+			a {
+				height: 125px;
+				width: 125px;
+				display: block;
+				text-indent: -9999px;
+			}
+
+			&#short-circuit {left: 0px; top: 70px; }
+			&#flip-switch	{left: 209px; top: 20px; }
+			&#wheatstone	{left: 418px; top: 70px; }
+			&#schottky {left: 627px; top: 20px; }
+			&#ampere {left: 835px; top: 70px; }
+
+			&#short-circuit a:hover, &#short-circuit.selected {background: transparent url("/assets/bg_beers_internal.jpg") 0 -285px no-repeat; }
+			&#flip-switch a:hover, &#flip-switch.selected {background: transparent url("/assets/bg_beers_internal.jpg") -209px -235px no-repeat; }
+			&#wheatstone a:hover, &#wheatstone.selected {background: transparent url("/assets/bg_beers_internal.jpg") -418px -285px no-repeat; }
+			&#schottky a:hover, &#schottky.selected {background: transparent url("/assets/bg_beers_internal.jpg") -627px -235px no-repeat; }
+			&#ampere a:hover, &#ampere.selected {background: transparent url("/assets/bg_beers_internal.jpg") -835px -285px no-repeat; }
+		}
+	}
+
+}
+

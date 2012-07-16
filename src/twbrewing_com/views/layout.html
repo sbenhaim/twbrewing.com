@@ -11,15 +11,15 @@
 	<!-- <script>try{Typekit.load();}catch(e){};TypekitConfig={kitId:"zbh6eqe",scriptTimeout:4000},function(){var a=document.getElementsByTagName("html")[0];a.className+=" wf-loading";var b=setTimeout(function(){a.className=a.className.replace(/(\s|^)wf-loading(\s|$)/g,""),a.className+=" wf-inactive"},TypekitConfig.scriptTimeout),c=document.createElement("script");c.src="//use.typekit.com/"+TypekitConfig.kitId+".js",c.type="text/javascript",c.async="true",c.onload=c.onreadystatechange=function(){var a=this.readyState;if(!a||a=="complete"||a=="loaded"){clearTimeout(b);try{Typekit.load(TypekitConfig)}catch(c){}}};var d=document.getElementsByTagName("script")[0];d.parentNode.insertBefore(c,d)}()</script> -->
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<link rel="stylesheet" href="fresh.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/fresh.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="tw.js"></script>
+	<script type="text/javascript" src="/tw.js"></script>
 
 	<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	
-	<link rel="apple-touch-icon" sizes="114x114" href="assets/icon.png"/>
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/icon.png"/>
 	
 	<meta name="description" content="Dig responsive design? Hate fluid grids? Try a Frameless grid."/>
 </head>
@@ -31,13 +31,15 @@
 		<div id="tabs">
 			<ul>
 				<li id="twb-tab" class="active">
-					<a href="#">
-						<img src="assets/twb-tab-text-active.png" alt="Tin Whiskers Brewing Co."/>
+					<a href="/">
+						<!-- <img src="/assets/twb-tab-text-active.png" alt="Tin Whiskers Brewing Co."/> -->
+						Tin Whiskers Brewing Co.
 					</a>
 				</li>
-				<li>
+				<li id="blw-tab">
 					<a href="#">
-						<img src="assets/blw-tab-text.png" alt="Tin Whiskers Brewing Co."/>
+						<!-- <img src="/assets/blw-tab-text.png" alt="Tin Whiskers Brewing Co."/> -->
+						Brew Logic Wiki
 					</a>
 				</li>
 			</ul>
@@ -45,7 +47,8 @@
 
 		<div id="contact">
 			<a href="#">
-				<img src="assets/contact.png" alt="Contact Us" />
+				<!-- <img src="/assets/contact.png" alt="Contact Us" /> -->
+				Contact Tin Whiskers Brewing Co.
 			</a>
 		</div>
 
@@ -53,30 +56,38 @@
 	<nav id="primary-nav">
 		<ul>
 			<li>
-				<a href="beer.html">
-					<img src="assets/beer-specifications.png" alt="Beer Specifications" />
+				<a href="/beers">
+					<span class="big">Beer</span>
+					<span class="little">Specifications</span>
 				</a>
 			</li><li>
-				<a href="#">
-					<img src="assets/news-and-updates.png" alt="News and Updates" />
+				<a href="/news">
+					<span class="big">News</span>
+					<span class="little">&amp; Updates</span>
 				</a>
 			</li><li id="logo-cog">
 				<a href="/">
-					<img src="assets/logo-cog.png" alt="Tin Whiskers Brewing" />
+					<img src="/assets/logo-cog.png" alt="Tin Whiskers Brewing" />
 				</a>
 			</li><li>
-				<a href="#">
-					<img src="assets/who-are-we.png" alt="Who are we?" />
+				<a href="/who">
+					<span class="big">Who</span>
+					<span class="little">Are We?</span>
 				</a>
 			</li><li>
-				<a href="#">
-					<img src="assets/where-to-find-us.png" alt="Where to Find Us" />
+				<a href="/where">
+					<span class="big">Where</span>
+					<span class="little">To Find Us</span>
 				</a>
 			</li>
 		</ul>
 	</nav>
 
+	<div id="banner"></div>
+
 	<div id="content"></div>
+
+	<div id="lower"></div>
 
 	<footer id="footer">
 
@@ -97,7 +108,7 @@
 			</ul>
 		</div>
 		<div id="footer-contact">
-			<img src="assets/tin-whiskers-logo-footer.png" alt="Tin Whiskers Brewing Co." />
+			<img src="/assets/tin-whiskers-logo-footer.png" alt="Tin Whiskers Brewing Co." />
 			<p>&copy; Tin Whiskers Brewing Company</p>
 			<p>1151 County Road B West, Roseville, Minnesota 55113</p>
 		</div>
