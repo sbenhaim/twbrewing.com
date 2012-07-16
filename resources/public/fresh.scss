@@ -441,6 +441,15 @@ body {
 				color: #8f1720;
 				padding-bottom: 13px;
 				display: block;
+
+				&:hover  {
+					color: #2e2c2c;
+				}
+
+			}
+
+			.selected .big  {
+				color: #2e2c2c;
 			}
 
 			.little {
@@ -496,6 +505,38 @@ body {
 			}
 		}
 	}
+
+	&.news {
+		height: 132px;
+		display: table;
+
+		.h1 {
+			vertical-align: middle;
+			display: table-cell;
+			font-size: 86px;
+			font-family: 'OstrichSansMedium';
+			text-shadow: 0 1px 0 black;
+		}
+		/* background-image: url( "/assets/bg-highlight.jpg" ), url( "/assets/background-granite.png" ); */
+		/* background-repeat: no-repeat, repeat-x; */
+		/* background-position: top center, left; */
+	}
+
+	&.who {
+		background-image: url( "/assets/three-electrical-engineers.jpg" ), url( "/assets/background-granite.png" );
+		background-repeat: no-repeat, repeat-x;
+		height: 322px;
+		background-position: center, left;
+	}
+
+	&.where {
+		background-image: url( "/assets/banner-our-brewery.jpg" ), url( "/assets/background-granite.png" );
+		background-repeat: no-repeat, repeat-x;
+		height: 322px;
+		background-position: center, left;
+
+	}
+
 }
 
 
@@ -503,7 +544,7 @@ body {
 
 #lower {
 	padding-bottom: 68px;
-	background-image: url( "assets/background-shale.png" );
+	background-image: url( "/assets/background-shale.png" );
 	div {
 		display: inline-block;
 	}
@@ -531,6 +572,83 @@ body {
 
 		.left, .middle, .right {
 			@include width(4);
+		}
+
+		.right {
+
+			font-size: $font-size;
+
+			ul {
+				/* height: 333px; */
+				background-color: #b9b6af;
+				width: 270px;
+				border-radius: 3px;
+
+				li {
+					height: 84px;
+					vertical-align: bottom;
+					border-top: 1px solid #dedbd1;
+					border-bottom: 1px solid #908e8a;
+					text-align: left;
+					padding-left: 17px;
+
+					.h2 {
+						font-family: 'OstrichSansMedium';
+						font-size: 34px;
+						font-weight: bold;
+						color: white;
+						text-shadow: 0px 1px 1px #333;
+						display: inline-block;
+						padding-top: 19px;
+						padding-bottom: 9px;
+					}
+
+					&:first-child {
+						border-top-left-radius: 3px;
+						border-top-right-radius: 3px;
+						padding-top: 3px;
+					}
+					
+					&:last-child {
+						border-bottom-left-radius: 3px;
+						border-bottom-right-radius: 3px;
+						height: 75px;
+						.h2 {
+							padding-top: 16px;
+						}
+					}
+
+					img {
+						float: left;
+					}
+
+					&:hover {
+						background-color: #9c1923;
+						.sub {
+							color: white;
+							text-shadow: 0px 1px 1px black;
+						}
+					}
+
+					&:first-child {
+						border-top: none;
+					}
+
+					&:last-child {
+						border-bottom: none;
+					}
+
+
+					.sub {
+						font-size: 12px;
+						color: #686766;
+						text-shadow: 0px 1px 1px white;
+						clear: both;
+					}
+
+					list-style: none;
+				}				
+			}
 		}
 	}
 }
@@ -560,6 +678,11 @@ body {
 	background-color: white;
 	padding: 65px 0 85px 0;
 
+	background-image: url( 'assets/border-end.png' ), url( 'assets/border-bottom.png' ), url( 'assets/border.png' );
+	background-position: 895px 66px, 895px bottom, 895px 66px;
+	
+	background-repeat: no-repeat, no-repeat, no-repeat;
+
 	div {
 		display: inline-block;
 		vertical-align: top;
@@ -572,6 +695,7 @@ body {
 	#left {
 		@include width( 8 );
 
+		padding-right: col-width( 1 );
 		font-size: $font-size;
 		color: $content-color;
 		text-align: left;
@@ -581,6 +705,11 @@ body {
 			font-family: "OstrichSansLight";
 			font-size: 48px;
 			padding-bottom: 23px;
+			padding-top: 60px;
+
+			&:first-child {
+				padding-top: 0px;
+			}
 		}
 
 		h2 {
@@ -604,6 +733,24 @@ body {
 
 		#recipe-header {
 			background-color: $sidebar-background-color;
+		}
+
+		#bjcp {
+			background-color: #686766;
+			font-size: 16px;
+			font-family: Helvetica;
+			color: #d5d2c8;
+			text-shadow: 0px 1px 1px black;
+			text-align: left;
+			width: 255px;
+			padding-top: 14px;
+			padding-bottom: 14px;
+			padding-left: 15px;
+
+			.bjcp {
+				font-family: 'OstrichSansBlack';
+				font-weight: bold;
+			}
 		}
 
 		#recipe {
@@ -640,11 +787,11 @@ body {
 // Beer Hover banner
 
 #banner.beers {
-	background-image: url( "assets/background-granite-beers.png" );
+	background-image: url( "/assets/background-granite-beers.png" );
 
 	#beer-background {
 		height: 321px;
-		background-image: url( "assets/background-beers.jpg" );
+		background-image: url( "/assets/background-beers.jpg" );
 		background-repeat: no-repeat;
 		background-position: center;
 		display: inline-block;
@@ -656,7 +803,7 @@ body {
 #banner.beers ul	{
 	height: 214px;
 	width: 960px;
-	background: transparent url("assets/bg_beers_internal.jpg") top left no-repeat;
+	background: transparent url("/assets/bg_beers_internal.jpg") top left no-repeat;
 	margin: 107px auto 0 auto;
 	padding: 0;
 	position: relative;
@@ -680,25 +827,25 @@ body {
 		&#schottky {left: 627px; top: 20px; }
 		&#ampere {left: 835px; top: 70px; }
 
-		&#short-circuit a:hover, &#short-circuit.selected {background: transparent url("assets/bg_beers_internal.jpg") 0 -285px no-repeat; }
-		&#flip-switch a:hover, &#flip-switch.selected {background: transparent url("assets/bg_beers_internal.jpg") -209px -235px no-repeat; }
-		&#wheatstone a:hover, &#wheatstone.selected {background: transparent url("assets/bg_beers_internal.jpg") -418px -285px no-repeat; }
-		&#schottky a:hover, &#schottky.selected {background: transparent url("assets/bg_beers_internal.jpg") -627px -235px no-repeat; }
-		&#ampere a:hover, &#ampere.selected {background: transparent url("assets/bg_beers_internal.jpg") -835px -285px no-repeat; }
+		&#short-circuit a:hover, &#short-circuit.selected {background: transparent url("/assets/bg_beers_internal.jpg") 0 -285px no-repeat; }
+		&#flip-switch a:hover, &#flip-switch.selected {background: transparent url("/assets/bg_beers_internal.jpg") -209px -235px no-repeat; }
+		&#wheatstone a:hover, &#wheatstone.selected {background: transparent url("/assets/bg_beers_internal.jpg") -418px -285px no-repeat; }
+		&#schottky a:hover, &#schottky.selected {background: transparent url("/assets/bg_beers_internal.jpg") -627px -235px no-repeat; }
+		&#ampere a:hover, &#ampere.selected {background: transparent url("/assets/bg_beers_internal.jpg") -835px -285px no-repeat; }
 	}
 }
 
 #beers {
 	padding-bottom: 24px;
-	background-image: url( "assets/beers.png" );
+	background-image: url( "/assets/beers.png" );
 	background-repeat: no-repeat;
 	background-position: top center;
 	width: 100%;
 
 	ul	{
-		height: 214px;
+		height: 200px;
 		width: 960px;
-		background: transparent url("/assets/bg_beers_internal.jpg") top left no-repeat;
+		background: transparent url("/assets/bg_beers_home.jpg") top left no-repeat;
 		margin: 0 auto 0 auto;
 		padding: 0;
 		position: relative;
@@ -716,17 +863,17 @@ body {
 				text-indent: -9999px;
 			}
 
-			&#short-circuit {left: 0px; top: 70px; }
-			&#flip-switch	{left: 209px; top: 20px; }
-			&#wheatstone	{left: 418px; top: 70px; }
-			&#schottky {left: 627px; top: 20px; }
-			&#ampere {left: 835px; top: 70px; }
+			&#short-circuit {left: 0px; top: 63px; }
+			&#flip-switch	{left: 209px; top: 13px; }
+			&#wheatstone	{left: 418px; top: 63px; }
+			&#schottky {left: 627px; top: 13px; }
+			&#ampere {left: 835px; top: 63px; }
 
-			&#short-circuit a:hover, &#short-circuit.selected {background: transparent url("/assets/bg_beers_internal.jpg") 0 -285px no-repeat; }
-			&#flip-switch a:hover, &#flip-switch.selected {background: transparent url("/assets/bg_beers_internal.jpg") -209px -235px no-repeat; }
-			&#wheatstone a:hover, &#wheatstone.selected {background: transparent url("/assets/bg_beers_internal.jpg") -418px -285px no-repeat; }
-			&#schottky a:hover, &#schottky.selected {background: transparent url("/assets/bg_beers_internal.jpg") -627px -235px no-repeat; }
-			&#ampere a:hover, &#ampere.selected {background: transparent url("/assets/bg_beers_internal.jpg") -835px -285px no-repeat; }
+			&#short-circuit a:hover, &#short-circuit.selected {background: transparent url("/assets/bg_beers_home.jpg") 0 -263px no-repeat; }
+			&#flip-switch a:hover, &#flip-switch.selected {background: transparent url("/assets/bg_beers_home.jpg") -209px -213px no-repeat; }
+			&#wheatstone a:hover, &#wheatstone.selected {background: transparent url("/assets/bg_beers_home.jpg") -418px -263px no-repeat; }
+			&#schottky a:hover, &#schottky.selected {background: transparent url("/assets/bg_beers_home.jpg") -627px -213px no-repeat; }
+			&#ampere a:hover, &#ampere.selected {background: transparent url("/assets/bg_beers_home.jpg") -835px -263px no-repeat; }
 		}
 	}
 

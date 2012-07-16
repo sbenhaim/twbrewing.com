@@ -26,7 +26,7 @@
 
 
 (t/deftemplate layout "twbrewing_com/views/layout.html" [d]
-  [:#banner] (sub t/content (d :banner))
+  [:#banner] (sub t/substitute (d :banner))
   [:#banner] (t/add-class (d :class))
   [:#content] (sub-maybe t/content (d :content))
   [:#lower] (sub-maybe t/content (d :lower))
@@ -34,7 +34,13 @@
   [(d :selected-nav)] (t/add-class "selected")
   )
 
-(t/defsnippet banner "twbrewing_com/views/content.html" [:#banner :> :*] [])
+(defn banner [page]
+  ((t/snippet "twbrewing_com/views/content.html" [(keyword (str "#banner." page))] [])))
+
+(defn content [page]
+  ((t/snippet "twbrewing_com/views/content.html" [(keyword (str "#content." page)) :> :*] [])))
+
+;; (t/defsnippet banner "twbrewing_com/views/content.html" [:#banner :> :*] [])
 (t/defsnippet lower "twbrewing_com/views/content.html" [:#lower :> :*] [])
 
 (t/defsnippet beer-banner "twbrewing_com/views/content.html" [:#banner-beers :> :*] [])
@@ -45,23 +51,30 @@
     ((t/snippet "twbrewing_com/views/content.html" [:#content :> beer-class] []))))
 
 (defroutes main-routes
-  (GET "/" [] (render (layout {:banner (banner)
+  (GET "/" [] (render (layout {:banner (banner "home")
                                :lower (lower)})))
 
   (GET "/beers" [] (resp/redirect "/beers/short-circuit"))
 
-  (GET "/beers/:beer" [beer] (render (layout {:banner (beer-banner)
+  (GET "/beers/:beer" [beer] (render (layout {:banner (banner "beers")
                                               :content (beer-content beer)
                                               :class "beers"
+                                              :selected-nav :#nav-beers
                                               :selected-beer (keyword (str "#" beer))})))
 
   ;; (GET "/beers/:beer" [beer] (render-snippet (beer-content beer)))
 
-  (GET "/news" [] (render (layout {:banner (beer-banner)})))
+  (GET "/news" [] (render (layout {:banner (banner "news")
+                                   :content (content "news")
+                                   :selected-nav :#nav-news})))
 
-  (GET "/who" [] (render (layout {:banner (beer-banner)})))
+  (GET "/who" [] (render (layout {:banner (banner "who")
+                                  :content (content "who")
+                                  :selected-nav :#nav-who})))
 
-  (GET "/where" [] (render (layout {:banner (beer-banner)})))
+  (GET "/where" [] (render (layout {:banner (banner "where")
+                                  :content (content "where")
+                                  :selected-nav :#nav-where})))
 
   ;; (GET "/beer-content" [] (render-snippet (content)))
 

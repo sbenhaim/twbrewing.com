@@ -278,6 +278,10 @@ body {
         color: #8f1720;
         padding-bottom: 13px;
         display: block; }
+        #primary-nav ul li .big:hover {
+          color: #2e2c2c; }
+      #primary-nav ul li .selected .big {
+        color: #2e2c2c; }
       #primary-nav ul li .little {
         font-weight: normal;
         text-shadow: 0px 1px 1px white;
@@ -318,10 +322,32 @@ body {
         font-weight: normal;
         color: white;
         letter-spacing: -1px; }
+  #banner.news {
+    height: 132px;
+    display: table;
+    /* background-image: url( "/assets/bg-highlight.jpg" ), url( "/assets/background-granite.png" ); */
+    /* background-repeat: no-repeat, repeat-x; */
+    /* background-position: top center, left; */ }
+    #banner.news .h1 {
+      vertical-align: middle;
+      display: table-cell;
+      font-size: 86px;
+      font-family: 'OstrichSansMedium';
+      text-shadow: 0 1px 0 black; }
+  #banner.who {
+    background-image: url("/assets/three-electrical-engineers.jpg"), url("/assets/background-granite.png");
+    background-repeat: no-repeat, repeat-x;
+    height: 322px;
+    background-position: center, left; }
+  #banner.where {
+    background-image: url("/assets/banner-our-brewery.jpg"), url("/assets/background-granite.png");
+    background-repeat: no-repeat, repeat-x;
+    height: 322px;
+    background-position: center, left; }
 
 #lower {
   padding-bottom: 68px;
-  background-image: url("assets/background-shale.png"); }
+  background-image: url("/assets/background-shale.png"); }
   #lower div {
     display: inline-block; }
   #lower h2 {
@@ -340,6 +366,56 @@ body {
     #lower #lower-nav .left, #lower #lower-nav .middle, #lower #lower-nav .right {
       /* width: ($cols * ($column + $gutter) - $gutter) / $em; */
       width: 320px; }
+    #lower #lower-nav .right {
+      font-size: 14px; }
+      #lower #lower-nav .right ul {
+        /* height: 333px; */
+        background-color: #b9b6af;
+        width: 270px;
+        border-radius: 3px; }
+        #lower #lower-nav .right ul li {
+          height: 84px;
+          vertical-align: bottom;
+          border-top: 1px solid #dedbd1;
+          border-bottom: 1px solid #908e8a;
+          text-align: left;
+          padding-left: 17px;
+          list-style: none; }
+          #lower #lower-nav .right ul li .h2 {
+            font-family: 'OstrichSansMedium';
+            font-size: 34px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0px 1px 1px #333;
+            display: inline-block;
+            padding-top: 19px;
+            padding-bottom: 9px; }
+          #lower #lower-nav .right ul li:first-child {
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            padding-top: 3px; }
+          #lower #lower-nav .right ul li:last-child {
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            height: 75px; }
+            #lower #lower-nav .right ul li:last-child .h2 {
+              padding-top: 16px; }
+          #lower #lower-nav .right ul li img {
+            float: left; }
+          #lower #lower-nav .right ul li:hover {
+            background-color: #9c1923; }
+            #lower #lower-nav .right ul li:hover .sub {
+              color: white;
+              text-shadow: 0px 1px 1px black; }
+          #lower #lower-nav .right ul li:first-child {
+            border-top: none; }
+          #lower #lower-nav .right ul li:last-child {
+            border-bottom: none; }
+          #lower #lower-nav .right ul li .sub {
+            font-size: 12px;
+            color: #686766;
+            text-shadow: 0px 1px 1px white;
+            clear: both; }
 
 #footer {
   padding: 30px 0 30px; }
@@ -358,6 +434,9 @@ body {
   background: none;
   background-color: white;
   padding: 65px 0 85px 0;
+  background-image: url("assets/border-end.png"), url("assets/border-bottom.png"), url("assets/border.png");
+  background-position: 895px 66px, 895px bottom, 895px 66px;
+  background-repeat: no-repeat, no-repeat, no-repeat;
   /* #divider { */
   /* 	@include width( 1 ); */
   /* 	height: 300px; */
@@ -373,6 +452,7 @@ body {
   #content #left {
     /* width: ($cols * ($column + $gutter) - $gutter) / $em; */
     width: 640px;
+    padding-right: 80px;
     font-size: 14px;
     color: #606060;
     text-align: left; }
@@ -380,7 +460,10 @@ body {
       color: #951c23;
       font-family: "OstrichSansLight";
       font-size: 48px;
-      padding-bottom: 23px; }
+      padding-bottom: 23px;
+      padding-top: 60px; }
+      #content #left h1:first-child {
+        padding-top: 0px; }
     #content #left h2 {
       color: #605f5e;
       font-family: "OstrichSansBlack";
@@ -391,6 +474,20 @@ body {
     width: 320px; }
     #content #right #recipe-header {
       background-color: #686765; }
+    #content #right #bjcp {
+      background-color: #686766;
+      font-size: 16px;
+      font-family: Helvetica;
+      color: #d5d2c8;
+      text-shadow: 0px 1px 1px black;
+      text-align: left;
+      width: 255px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      padding-left: 15px; }
+      #content #right #bjcp .bjcp {
+        font-family: 'OstrichSansBlack';
+        font-weight: bold; }
     #content #right #recipe {
       padding: 25px 23px 32px 23px;
       text-align: left;
@@ -416,10 +513,10 @@ body {
       font-size: 16px; }
 
 #banner.beers {
-  background-image: url("assets/background-granite-beers.png"); }
+  background-image: url("/assets/background-granite-beers.png"); }
   #banner.beers #beer-background {
     height: 321px;
-    background-image: url("assets/background-beers.jpg");
+    background-image: url("/assets/background-beers.jpg");
     background-repeat: no-repeat;
     background-position: center;
     display: inline-block;
@@ -428,7 +525,7 @@ body {
 #banner.beers ul {
   height: 214px;
   width: 960px;
-  background: transparent url("assets/bg_beers_internal.jpg") top left no-repeat;
+  background: transparent url("/assets/bg_beers_internal.jpg") top left no-repeat;
   margin: 107px auto 0 auto;
   padding: 0;
   position: relative; }
@@ -458,26 +555,26 @@ body {
       left: 835px;
       top: 70px; }
     #banner.beers ul li#short-circuit a:hover, #banner.beers ul li#short-circuit.selected {
-      background: transparent url("assets/bg_beers_internal.jpg") 0 -285px no-repeat; }
+      background: transparent url("/assets/bg_beers_internal.jpg") 0 -285px no-repeat; }
     #banner.beers ul li#flip-switch a:hover, #banner.beers ul li#flip-switch.selected {
-      background: transparent url("assets/bg_beers_internal.jpg") -209px -235px no-repeat; }
+      background: transparent url("/assets/bg_beers_internal.jpg") -209px -235px no-repeat; }
     #banner.beers ul li#wheatstone a:hover, #banner.beers ul li#wheatstone.selected {
-      background: transparent url("assets/bg_beers_internal.jpg") -418px -285px no-repeat; }
+      background: transparent url("/assets/bg_beers_internal.jpg") -418px -285px no-repeat; }
     #banner.beers ul li#schottky a:hover, #banner.beers ul li#schottky.selected {
-      background: transparent url("assets/bg_beers_internal.jpg") -627px -235px no-repeat; }
+      background: transparent url("/assets/bg_beers_internal.jpg") -627px -235px no-repeat; }
     #banner.beers ul li#ampere a:hover, #banner.beers ul li#ampere.selected {
-      background: transparent url("assets/bg_beers_internal.jpg") -835px -285px no-repeat; }
+      background: transparent url("/assets/bg_beers_internal.jpg") -835px -285px no-repeat; }
 
 #beers {
   padding-bottom: 24px;
-  background-image: url("assets/beers.png");
+  background-image: url("/assets/beers.png");
   background-repeat: no-repeat;
   background-position: top center;
   width: 100%; }
   #beers ul {
-    height: 214px;
+    height: 200px;
     width: 960px;
-    background: transparent url("/assets/bg_beers_internal.jpg") top left no-repeat;
+    background: transparent url("/assets/bg_beers_home.jpg") top left no-repeat;
     margin: 0 auto 0 auto;
     padding: 0;
     position: relative; }
@@ -493,26 +590,26 @@ body {
         text-indent: -9999px; }
       #beers ul li#short-circuit {
         left: 0px;
-        top: 70px; }
+        top: 63px; }
       #beers ul li#flip-switch {
         left: 209px;
-        top: 20px; }
+        top: 13px; }
       #beers ul li#wheatstone {
         left: 418px;
-        top: 70px; }
+        top: 63px; }
       #beers ul li#schottky {
         left: 627px;
-        top: 20px; }
+        top: 13px; }
       #beers ul li#ampere {
         left: 835px;
-        top: 70px; }
+        top: 63px; }
       #beers ul li#short-circuit a:hover, #beers ul li#short-circuit.selected {
-        background: transparent url("/assets/bg_beers_internal.jpg") 0 -285px no-repeat; }
+        background: transparent url("/assets/bg_beers_home.jpg") 0 -263px no-repeat; }
       #beers ul li#flip-switch a:hover, #beers ul li#flip-switch.selected {
-        background: transparent url("/assets/bg_beers_internal.jpg") -209px -235px no-repeat; }
+        background: transparent url("/assets/bg_beers_home.jpg") -209px -213px no-repeat; }
       #beers ul li#wheatstone a:hover, #beers ul li#wheatstone.selected {
-        background: transparent url("/assets/bg_beers_internal.jpg") -418px -285px no-repeat; }
+        background: transparent url("/assets/bg_beers_home.jpg") -418px -263px no-repeat; }
       #beers ul li#schottky a:hover, #beers ul li#schottky.selected {
-        background: transparent url("/assets/bg_beers_internal.jpg") -627px -235px no-repeat; }
+        background: transparent url("/assets/bg_beers_home.jpg") -627px -213px no-repeat; }
       #beers ul li#ampere a:hover, #beers ul li#ampere.selected {
-        background: transparent url("/assets/bg_beers_internal.jpg") -835px -285px no-repeat; }
+        background: transparent url("/assets/bg_beers_home.jpg") -835px -263px no-repeat; }
