@@ -445,22 +445,15 @@ body {
 
 #content {
   /* width: ($cols * ($column + $gutter) - $gutter) / $em; */
-  width: 1040px;
+  width: 960px;
   background: none;
   background-color: white;
   padding: 65px 0 85px 0;
   display: inline-block;
   font-size: 0;
   background-image: url("assets/border-end.png"), url("assets/border-bottom.png"), url("assets/border.png");
-  background-position: 690px 66px, 690px bottom, 690px 66px;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  /* #divider { */
-  /* 	@include width( 1 ); */
-  /* 	height: 300px; */
-  /* 	background-image: url( 'assets/divider-background.png' ); */
-  /* 	background-position: center; */
-  /* 	background-repeat: repeat-y; */
-  /* } */ }
+  background-position: 605px 66px, 605px bottom, 605px 66px;
+  background-repeat: no-repeat, no-repeat, no-repeat; }
   #content div {
     display: inline-block;
     vertical-align: top; }
@@ -471,7 +464,7 @@ body {
       color: #951c23; }
   #content #left {
     /* width: ($cols * ($column + $gutter) - $gutter) / $em; */
-    width: 640px;
+    width: 560px;
     padding-right: 80px;
     font-size: 14px;
     color: #606060;
