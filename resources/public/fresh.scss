@@ -345,6 +345,7 @@ body {
 
 #header {
 	background-image: url( "assets/background-slate.png" );
+		min-width: col-width( 13 );
 
 	#hwrapper {
 		display: inline-block;
@@ -432,6 +433,8 @@ body {
 
 #primary-nav {
 	background-image: url( "assets/background-sand.png" );
+	min-width: col-width( 13 );
+
 	@include horizontal-nav;
 	padding: 12px 0 12px;
 
@@ -487,6 +490,7 @@ body {
 
 #banner {
 	background: url("/assets/banner-short-circuit-stout-temp.jpg") 50% 0 no-repeat, url("/assets/background-granite.png") repeat-x;
+	min-width: col-width( 13 );
 	text-align: center;
 	height: 433px;
 
@@ -534,6 +538,9 @@ body {
 	&.general {
 		height: 132px;
 		display: table;
+		background: url("/assets/bg-highlight.jpg") 50% 0 no-repeat, url("/assets/background-granite-news.jpg") repeat-x;
+		min-width: col-width( 13 );
+
 
 		.h1 {
 			vertical-align: middle;
@@ -542,7 +549,6 @@ body {
 			font-family: 'OstrichSansMedium';
 			text-shadow: 0 1px 0 black;
 		}
-		background: url("/assets/bg-highlight.jpg") 50% 0 no-repeat, url("/assets/background-granite-news.jpg") repeat-x;
 	}
 
 	&.who {
@@ -573,6 +579,7 @@ body {
 	background-image: url( "/assets/background-shale.png" );
 	padding-top: 0px;
 	vertical-align: top;
+	min-width: col-width( 13 );
 
 	div {
 		display: inline-block;
@@ -694,6 +701,7 @@ body {
 #footer {
 
 	background-image: url( "assets/background-slate.png" );
+	min-width: col-width( 13 );
 	padding: 30px 0 30px;
 
 	img {

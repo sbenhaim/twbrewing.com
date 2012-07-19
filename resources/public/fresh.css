@@ -123,12 +123,19 @@ body {
 	- the first one zooms out by a factor of (16-2)/16 = 0.875
 	- the second one zooms in by a factor of (16+2)/16 = 1.125  
 */
+/*
 @media screen and (max-width: 1px) {
-  body {
-    font-size: 0.857em; } }
+	body {
+		font-size: ($font-size - 2) / $em;
+	}
+}
+
 @media screen and (max-width: 1px) {
-  body {
-    font-size: 1.143em; } }
+	body {
+		font-size: ($font-size + 2) / $em;
+	}
+}
+*/
 a {
   text-decoration: none !important; }
 
@@ -198,7 +205,8 @@ body {
   font-family: "Helvetica", Arial, sans-serif; }
 
 #header {
-  background-image: url("assets/background-slate.png"); }
+  background-image: url("assets/background-slate.png");
+  min-width: 1040px; }
   #header #hwrapper {
     display: inline-block;
     /* width: ($cols * ($column + $gutter) - $gutter) / $em; */
@@ -261,6 +269,7 @@ body {
 
 #primary-nav {
   background-image: url("assets/background-sand.png");
+  min-width: 1040px;
   padding: 12px 0 12px; }
   #primary-nav ul {
     display: inline-block; }
@@ -304,6 +313,7 @@ body {
 
 #banner {
   background: url("/assets/banner-short-circuit-stout-temp.jpg") 50% 0 no-repeat, url("/assets/background-granite.png") repeat-x;
+  min-width: 1040px;
   text-align: center;
   height: 433px; }
   #banner #cell {
@@ -337,7 +347,8 @@ body {
   #banner.general {
     height: 132px;
     display: table;
-    background: url("/assets/bg-highlight.jpg") 50% 0 no-repeat, url("/assets/background-granite-news.jpg") repeat-x; }
+    background: url("/assets/bg-highlight.jpg") 50% 0 no-repeat, url("/assets/background-granite-news.jpg") repeat-x;
+    min-width: 1040px; }
     #banner.general .h1 {
       vertical-align: middle;
       display: table-cell;
@@ -360,7 +371,8 @@ body {
   padding-bottom: 68px;
   background-image: url("/assets/background-shale.png");
   padding-top: 0px;
-  vertical-align: top; }
+  vertical-align: top;
+  min-width: 1040px; }
   #lower div {
     display: inline-block; }
   #lower h2 {
@@ -436,6 +448,7 @@ body {
 
 #footer {
   background-image: url("assets/background-slate.png");
+  min-width: 1040px;
   padding: 30px 0 30px; }
   #footer img {
     padding-bottom: 15px; }
@@ -649,7 +662,7 @@ body {
         background: transparent url("/assets/bg_beers_home.jpg") -835px -263px no-repeat; }
 
 .twtr-hd {
-  width: 250px; }
+  width: 200px; }
 
 #myModal {
   color: black;
