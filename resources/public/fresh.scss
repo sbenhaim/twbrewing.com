@@ -194,7 +194,7 @@ body {
 	- the first one zooms out by a factor of (16-2)/16 = 0.875
 	- the second one zooms in by a factor of (16+2)/16 = 1.125  
 */
-
+/*
 @media screen and (max-width: 1px) {
 	body {
 		font-size: ($font-size - 2) / $em;
@@ -206,6 +206,7 @@ body {
 		font-size: ($font-size + 2) / $em;
 	}
 }
+*/
 
 
 // Start custom styles
@@ -937,5 +938,5 @@ body {
 
 // Twitter widget fix
 .twtr-hd {
-	width: 250px;
+	width: 200px;
 }
