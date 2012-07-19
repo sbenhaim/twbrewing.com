@@ -642,3 +642,6 @@ body {
         background: transparent url("/assets/bg_beers_home.jpg") -627px -213px no-repeat; }
       #beers ul li#ampere a:hover, #beers ul li#ampere.selected {
         background: transparent url("/assets/bg_beers_home.jpg") -835px -263px no-repeat; }
+
+.twtr-hd {
+  width: 250px; }
