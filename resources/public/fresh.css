@@ -129,6 +129,9 @@ body {
 @media screen and (max-width: 1px) {
   body {
     font-size: 1.143em; } }
+a {
+  text-decoration: none !important; }
+
 div.clear {
   clear: both !important;
   height: 0px !important;
@@ -367,6 +370,8 @@ body {
     font-family: 'OstrichSansBlack', sans-serif;
     color: #918f8b;
     padding-bottom: 24px; }
+  #lower img {
+    vertical-align: bottom; }
   #lower img.h2 {
     padding-bottom: 24px; }
   #lower #lower-nav {
@@ -645,3 +650,7 @@ body {
 
 .twtr-hd {
   width: 250px; }
+
+#myModal {
+  color: black;
+  font-size: 14px; }

@@ -210,6 +210,11 @@ body {
 
 
 // Start custom styles
+
+a {
+	text-decoration: none !important;
+}
+
 div.clear {
 	clear: both !important;
 	height: 0px !important;
@@ -582,6 +587,10 @@ body {
 		padding-bottom: 24px;
 	}
 
+	img {
+		vertical-align: bottom;
+	}
+
 	img.h2 {
 		padding-bottom: 24px;
 	}
@@ -939,4 +948,9 @@ body {
 // Twitter widget fix
 .twtr-hd {
 	width: 200px;
+}
+
+#myModal {
+	color: black;
+	font-size: $font-size;
 }

@@ -5,3 +5,18 @@
 // 	$(evt.target).siblings("li").removeClass( "selected" );
 // });
 
+$(window).load( function( ) {
+
+	var twentyOne = $.cookie( "twentyOne" );
+
+	if ( ! twentyOne ) { 
+		var options = {'backdrop': 'static'};
+		$('#myModal').modal(options);
+
+		$('#myModal').on('hide', function() {
+			$.cookie( "twentyOne", true );
+		});
+	}
+
+});
+

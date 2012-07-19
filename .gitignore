@@ -5,3 +5,4 @@ doc/
 test/
 resources/public/.sass-cache/
 
+resources/.DS_Store
