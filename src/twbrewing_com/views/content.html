@@ -357,78 +357,86 @@
 
 	<div id="lower-nav">
 
-		<div class="left" id="connect-twitter">
-			<h2>Connect on <span class="darker">Twitter</span></h2>
-			<div id="connect-on-twitter">
-				<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-				<script>
-					new TWTR.Widget({
-					version: 2,
-					type: 'profile',
-					rpp: 3,
-					interval: 30000,
-					width: 270,
-					height: 245,
-					theme: {
-					shell: {
-					background: '#686766',
-					color: '#ffffff'
-					},
-					tweets: {
-					background: '#b9b6af',
-					color: '#333131',
-					links: '#a01821'
-					}
-					},
-					features: {
-					scrollbar: true,
-					loop: false,
-					live: false,
-					behavior: 'all'
-					}
-					}).render().setUser('mnbeer').start();
-				</script>
-			</div>
-		</div>
-
-		<img class="v-div" src="/assets/v-divider.png" alt="" />
-
-		<div class="middle" id="connect-for-realz">
-			<h2>Connect in Real Life</h2>
-			<div id="connect-for-real">
-				<a href="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=1151+County+Road+B+West,+Roseville,+MN&aq=0&oq=1151+county+&sll=45.006746,-93.14857&sspn=0.02127,0.045447&vpsrc=6&ie=UTF8&hq=&hnear=1151+County+Road+B+W,+Roseville,+Minnesota+55113&ll=45.005897,-93.152905&spn=0.02127,0.045447&t=m&z=15&iwloc=A">
-					<img src="/assets/at-our-brewery.png" alt="At Our Brewery" />
-				</a>
-			</div>
-		</div>
-
-		<img class="v-div" src="/assets/v-divider.png" alt="" />
-
-		<div class="right" id="connect-other">
-			<h2>Other Ways to <span class="darker">Connect</span></h2>
-			<div id="other-ways-to-connect">
-				<ul>
-					<li class="blw">
-						<a href="/blw">
-							<span class="h2">Brew Logic Wiki</span>
-							<div class="sub">Recipes &amp; Resources for home/pro brewers</div>
+		<ul>
+			<li>
+				<div id="connect-twitter">
+					<h2>Connect on <span class="darker">Twitter</span></h2>
+					<div id="connect-on-twitter">
+						<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+						<script>
+							new TWTR.Widget({
+							version: 2,
+							type: 'profile',
+							rpp: 3,
+							interval: 30000,
+							width: 270,
+							height: 245,
+							theme: {
+							shell: {
+							background: '#686766',
+							color: '#ffffff'
+							},
+							tweets: {
+							background: '#b9b6af',
+							color: '#333131',
+							links: '#a01821'
+							}
+							},
+							features: {
+							scrollbar: true,
+							loop: false,
+							live: false,
+							behavior: 'all'
+							}
+							}).render().setUser('mnbeer').start();
+						</script>
+					</div>
+				</div>
+			</li>
+			<li>
+				<img class="v-div" src="/assets/v-divider.png" alt="" />
+			</li>
+			<li>
+				<div id="connect-for-realz">
+					<h2>Connect in Real Life</h2>
+					<div id="connect-for-real">
+						<a href="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=1151+County+Road+B+West,+Roseville,+MN&aq=0&oq=1151+county+&sll=45.006746,-93.14857&sspn=0.02127,0.045447&vpsrc=6&ie=UTF8&hq=&hnear=1151+County+Road+B+W,+Roseville,+Minnesota+55113&ll=45.005897,-93.152905&spn=0.02127,0.045447&t=m&z=15&iwloc=A">
+							<img src="/assets/at-our-brewery.png" alt="At Our Brewery" />
 						</a>
-					</li>
-					<li class="facebook">
-						<span class="h2">Facebook</span>
-						<div class="sub">News and Events for Tin Whisker fans</div>
-					</li>
-					<li class="untappd">
-						<span class="h2">Untappd</span>
-						<div class="sub">Ratings &amp; Reviews of Tin Whiskers Brews</div>
-					</li>
-					<li class="contact">
-						<span class="h2">Contact Us</span>
-						<div class="sub">Questions &amp; Feedback are welcome</div>
-					</li>
-				</ul>
-			</div>
-		</div>
+					</div>
+				</div> 
+			</li>
+			<li>
+				<img class="v-div" src="/assets/v-divider.png" alt="" />
+			</li>
+			<li>
+				<div id="connect-other">
+					<h2>Other Ways to <span class="darker">Connect</span></h2>
+					<div>
+						<ul>
+							<li class="blw">
+								<a href="/blw">
+									<span class="h2">Brew Logic Wiki</span>
+									<div class="sub">Recipes &amp; Resources for home/pro brewers</div>
+								</a>
+							</li>
+							<li class="facebook">
+								<span class="h2">Facebook</span>
+								<div class="sub">News and Events for Tin Whisker fans</div>
+							</li>
+							<li class="untappd">
+								<span class="h2">Untappd</span>
+								<div class="sub">Ratings &amp; Reviews of Tin Whiskers Brews</div>
+							</li>
+							<li class="contact">
+								<span class="h2">Contact Us</span>
+								<div class="sub">Questions &amp; Feedback are welcome</div>
+							</li>
+						</ul>
+					</div>
+				</div> 
+			</li>
+		</ul>
 	</div>
 </div>
 
@@ -511,11 +519,11 @@
 	<div id="right">
 		<h2>What's a <span class="darker">Tin Whisker</span></h2>
 		<p>A Tin Whisker is is an electrical engineering term for a
-		type of product fault that typically has the symptom of a short
-		circuit on the printed circuit board (PCB). It is caused by a tin hair
-		that would grow between adjacent pins of an integrated circuit (IC
-		which are the little black parts you'll see on the circuit
-		board). <a href="http://en.wikipedia.org/wiki/Tin_whisker">Read more on Wikipedia</a></p>
+			type of product fault that typically has the symptom of a short
+			circuit on the printed circuit board (PCB). It is caused by a tin hair
+			that would grow between adjacent pins of an integrated circuit (IC
+			which are the little black parts you'll see on the circuit
+			board). <a href="http://en.wikipedia.org/wiki/Tin_whisker">Read more on Wikipedia</a></p>
 
 		<div class="twitter-widget"></div>
 	</div>
@@ -525,13 +533,13 @@
 	<div id="left" class="about">
 		<h1>We’re working on it.</h1>
 		<p>The Tin Whiskers founders are busy getting the brewery up
-		and running. If you’re interested in helping out or being a part of
-		it, please contact Tin Whiskers. In the mean time, you'll only find
-		Tin Whiskers beer in the basement brewery at founder, Jeff Moriarty's
-		house. </p>
+			and running. If you’re interested in helping out or being a part of
+			it, please contact Tin Whiskers. In the mean time, you'll only find
+			Tin Whiskers beer in the basement brewery at founder, Jeff Moriarty's
+			house. </p>
 
 		<p>Eventually this page will have all the tools necessary to
-		track down the nearest Tin Whisker's pint, growlers, or 6-pack.</p>
+			track down the nearest Tin Whisker's pint, growlers, or 6-pack.</p>
 
 		<h2>Stay Connected</h2>
 		<p><a href="#">Follow Us on Twitter</a></p>
