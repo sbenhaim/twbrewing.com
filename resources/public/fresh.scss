@@ -656,6 +656,7 @@ body {
 				padding-left: 45px;
 				padding-top: 12px;
 				padding-bottom: 5px;
+				text-decoration: none !important;
 			}
 
 			&:first-child {
@@ -734,6 +735,11 @@ body {
 		list-style: none;
 		padding: 6px;
 	}
+
+	a:hover {
+		text-decoration: underline !important;
+		color: white;
+	}
 }
 
 #content {
@@ -748,6 +754,10 @@ body {
 	background-position: 605px 66px, 605px bottom, 605px 66px;
 	
 	background-repeat: no-repeat, no-repeat, no-repeat;
+
+	a {
+		text-decoration: underline !important;
+	}
 
 	div {
 		display: inline-block;
@@ -776,7 +786,7 @@ body {
 			color: $headline-color;
 			font-family: "OstrichSansMedium";
 			font-weight: normal;
-			font-size: 48px;
+			font-size: 49px;
 			padding-bottom: 23px;
 			padding-top: 60px;
 
@@ -803,8 +813,9 @@ body {
 
 		h2 {
 			color: #918f8b;
-			font-size: 25px;
+			font-size: 26px;
 			font-family: 'OstrichSansBlack';
+			font-weight: normal;
 			padding-bottom: 25px;
 
 			.darker {
