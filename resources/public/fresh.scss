@@ -536,17 +536,15 @@ body {
 
 	&.general {
 		height: 132px;
-		display: table;
 		background: url("/assets/bg-highlight.jpg") 50% 0 no-repeat, url("/assets/background-granite-news.jpg") repeat-x;
-		min-width: col-width( 13 );
 
 
 		.h1 {
 			vertical-align: middle;
-			display: table-cell;
 			font-size: 86px;
 			font-family: 'OstrichSansMedium';
 			text-shadow: 0 1px 0 black;
+			padding-top: 59px;
 		}
 	}
 

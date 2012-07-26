@@ -345,15 +345,13 @@ body {
     height: 51px; }
   #banner.general {
     height: 132px;
-    display: table;
-    background: url("/assets/bg-highlight.jpg") 50% 0 no-repeat, url("/assets/background-granite-news.jpg") repeat-x;
-    min-width: 1040px; }
+    background: url("/assets/bg-highlight.jpg") 50% 0 no-repeat, url("/assets/background-granite-news.jpg") repeat-x; }
     #banner.general .h1 {
       vertical-align: middle;
-      display: table-cell;
       font-size: 86px;
       font-family: 'OstrichSansMedium';
-      text-shadow: 0 1px 0 black; }
+      text-shadow: 0 1px 0 black;
+      padding-top: 59px; }
   #banner.who {
     background: url("/assets/three-electrical-engineers.jpg") 50% 0 no-repeat, url("/assets/background-granite-2.jpg") repeat-x;
     height: 322px; }
