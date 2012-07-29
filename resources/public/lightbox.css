@@ -54,7 +54,7 @@
 
 /* line 39, ../sass/lightbox.sass */
 .lb-container {
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 /* line 42, ../sass/lightbox.sass */
@@ -135,6 +135,10 @@
   -ms-border-bottom-right-radius: 4px;
   -o-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
+  position: absolute;
+  top: -15px;
+  left: 259px;
+  z-index: 9999;
 }
 /* line 38, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .lb-dataContainer:after {
