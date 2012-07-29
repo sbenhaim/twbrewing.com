@@ -89,7 +89,10 @@ lightbox = new Lightbox options
         id: 'lightboxOverlay'
       }).after($('<div/>', {
         id: 'lightbox'
-      }).append($('<div/>', {
+      }).append(
+
+		  
+		  $('<div/>', {
         "class": 'lb-outerContainer'
       }).append($('<div/>', {
         "class": 'lb-container'
@@ -107,7 +110,9 @@ lightbox = new Lightbox options
         "class": 'lb-cancel'
       }).append($('<img/>', {
         src: this.options.fileLoadingImage
-      }))))), $('<div/>', {
+      }))))),
+
+		  $('<div/>', {
         "class": 'lb-dataContainer'
       }).append($('<div/>', {
         "class": 'lb-data'
@@ -123,7 +128,9 @@ lightbox = new Lightbox options
         "class": 'lb-close'
       }).append($('<img/>', {
         src: this.options.fileCloseImage
-      }))))))).appendTo($('body'));
+      })))))
+
+	  )).appendTo($('body'));
       $('#lightboxOverlay').hide().on('click', function(e) {
         _this.end();
         return false;
