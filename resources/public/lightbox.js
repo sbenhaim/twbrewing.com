@@ -164,7 +164,7 @@ lightbox = new Lightbox options
       $('select, object, embed').css({
         visibility: "hidden"
       });
-      $('#lightboxOverlay').width($(document).width()).height($(document).height()).fadeIn(this.options.fadeDuration);
+      $('#lightboxOverlay').width($('body').width()).height($('body').height()).fadeIn(this.options.fadeDuration);
       this.album = [];
       imageNumber = 0;
       if ($link.attr('rel') === 'lightbox') {
@@ -217,7 +217,7 @@ lightbox = new Lightbox options
     };
 
     Lightbox.prototype.sizeOverlay = function() {
-      return $('#lightboxOverlay').width($(document).width()).height($(document).height());
+      return $('#lightboxOverlay').width($('body').width()).height($('body').height());
     };
 
     Lightbox.prototype.sizeContainer = function(imageWidth, imageHeight) {
